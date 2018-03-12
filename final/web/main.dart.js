@@ -3208,7 +3208,7 @@ h6:function(a,b){var z,y,x,w,v,u,t,s
 if(a.length===0){$.$get$aC().textContent="No words to display"
 return}z=$.$get$aC()
 y=W.bp("p",null)
-J.bF(y,"Getting other words that coorespond with the number "+H.b(b))
+J.bF(y,"Getting other words that correspond with the number "+H.b(b))
 z.appendChild(y)
 x=new F.h7()
 w=0

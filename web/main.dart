@@ -58,7 +58,7 @@ void updateGroupDisplay(List<String> words, String numberVersion) {
   }
 
   messageDisplay.append(new Element.p()
-    ..text = "Getting other words that coorespond with the number $numberVersion");
+    ..text = "Getting other words that correspond with the number $numberVersion");
 
   Element createGroupForLetter(String letter) {
     Element group = new Element.div();
