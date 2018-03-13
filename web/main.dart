@@ -26,6 +26,12 @@ void main() {
 
 void runWithTextOnEnter(KeyboardEvent event) {
   if (event.keyCode == KeyCode.ENTER) {
+    input.select();
+  }
+
+  if (input.value.isEmpty) {
+    clearOutputAreas();
+  } else {
     runWithText(null);
   }
 }
@@ -45,10 +51,8 @@ void runWithText(MouseEvent event) {
     return;
   }
 
-  updateMessageText();
-  output.text = "";
+  clearOutputAreas();
   updateGroupDisplay(words, numberVersion);
-  input.select();
 }
 
 void updateMessageText([String message = null]) {
@@ -60,9 +64,13 @@ void updateMessageText([String message = null]) {
   messageDisplay.append(new Element.p()..text = message);
 }
 
+void clearOutputAreas() {
+  output.text = "";
+  updateMessageText();
+}
+
 void updateGroupDisplay(List<String> words, String numberVersion) {
   if (words.isEmpty) {
-
     updateMessageText("No words to display");
     return;
   }
