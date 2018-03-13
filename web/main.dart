@@ -39,26 +39,36 @@ void runWithText(MouseEvent event) {
     words = numberToWordDart.getWords(text);
     numberVersion = numberToWordDart.convertToNumber(text);
   } catch (e) {
-    messageDisplay.text =
-    "Bad format, trie again. Text should be All letters or all numbers";
+    updateMessageText(
+        "Bad format, trie again. Text should be All letters or all numbers");
     print(e);
     return;
   }
 
-  messageDisplay.text = "";
+  updateMessageText();
   output.text = "";
   updateGroupDisplay(words, numberVersion);
   input.select();
 }
 
-void updateGroupDisplay(List<String> words, String numberVersion) {
-  if (words.isEmpty) {
-    messageDisplay.text = "No words to display";
+void updateMessageText([String message = null]) {
+  if (message == null) {
+    messageDisplay.text = "";
     return;
   }
 
-  messageDisplay.append(new Element.p()
-    ..text = "Getting other words that correspond with the number $numberVersion");
+  messageDisplay.append(new Element.p()..text = message);
+}
+
+void updateGroupDisplay(List<String> words, String numberVersion) {
+  if (words.isEmpty) {
+
+    updateMessageText("No words to display");
+    return;
+  }
+
+  updateMessageText(
+      "Getting other words that correspond with the number $numberVersion");
 
   Element createGroupForLetter(String letter) {
     Element group = new Element.div();
