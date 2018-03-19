@@ -16,9 +16,9 @@
 <body>
 
 <a href="https://github.com/DocJava/Dart-Phone-Mnemonic"><img style="position: absolute; top: 0; right: 0; border: 0;"
-                                                            src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67"
-                                                            alt="Fork me on GitHub"
-                                                            data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+                                                              src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67"
+                                                              alt="Fork me on GitHub"
+                                                              data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
 <div id="start-display">Currently loading the words, please wait.</div>
 <div id="app" style="display:none">
     <h1>Dart Phone Mnemonic</h1>
@@ -32,8 +32,26 @@
             flawed) word-list.</a>
     </p>
 
-    Input text: <input id="text_input" placeholder="Example: 'dad' or '323'" title="text_input" type="text" value=""/>
-    <input type="submit" id="submit" value="Get Results">
+    <div id="geeksforgeeks">
+        <p><img id="geeksforgeeks_image"
+                src="https://www.geeksforgeeks.org/wp-content/uploads/Mobile-keypad-267x300.png" alt="Mobile-keypad"
+                width="267" height="300"
+                srcset="https://www.geeksforgeeks.org/wp-content/uploads/Mobile-keypad-267x300.png 267w, https://www.geeksforgeeks.org/wp-content/uploads/Mobile-keypad.png 326w"
+                sizes="(max-width: 267px) 100vw, 267px"></p>
+        <p id="geeksforgeeks_text"><strong>Given a keypad as shown in diagram, and a n digit number, list all words
+            which are possible by pressing these numbers.</strong><br>
+            <em>For example if input number is 234, possible words which can be formed are (Alphabetical order):<br>
+                adg adh adi aeg aeh aei afg afh afi bdg bdh bdi beg beh bei bfg bfh bfi cdg cdh cdi ceg ceh cei cfg cfh
+                cfi</em></p>
+        <p>Stolen from <a href="https://www.geeksforgeeks.org/find-possible-words-phone-digits/">Geeks For Geeks</a></p>
+    </div>
+
+    <div>
+        <br/>
+        Input text: <input id="text_input" placeholder="Example: 'dad' or '323'" title="text_input" type="text"
+                           value=""/>
+        <input type="submit" id="submit" value="Get Results">
+    </div>
 
     <div id="message-display"></div>
     <div id="output"></div>
