@@ -1,11 +1,11 @@
 import 'dart:html';
 
-import 'NumberToWord.dart';
+import 'mnemonic_word_list.dart';
 
 final NodeValidatorBuilder _validateHtml = new NodeValidatorBuilder.common()
   ..allowElement('br');
 
-NumberToWordDart numberToWordDart;
+MnemonicWordList numberToWordDart;
 
 Element app = querySelector('#app');
 Element submit = querySelector('#submit');
@@ -15,7 +15,7 @@ Element startDisplay = querySelector('#start-display');
 Element messageDisplay = querySelector('#message-display');
 
 void main() {
-  numberToWordDart = new NumberToWordDart();
+  numberToWordDart = new MnemonicWordList();
 
   //words have been loaded
   startDisplay.text = "";
@@ -46,7 +46,7 @@ void runWithText(MouseEvent event) {
     numberVersion = numberToWordDart.convertToNumber(text);
   } catch (e) {
     updateMessageText(
-        "Bad format, trie again. Text should be All letters or all numbers");
+        "Bad format, trie again. Text should be ALL letters or ALL numbers");
     print(e);
     return;
   }
@@ -94,23 +94,21 @@ void updateGroupDisplay(List<String> words, String numberVersion) {
     return group;
   }
 
-  int index = 0;
   String currentLetter = "";
   Element currentGroup;
 
-  do {
-    if (words[index][0] != currentLetter) {
-      currentLetter = words[index][0];
+  for(String word in words){
+    String firstLetter = word[0];
+
+    if (firstLetter != currentLetter) {
+      currentLetter = firstLetter;
       currentGroup = createGroupForLetter(currentLetter);
     }
 
     Element span = new Element.span();
-    span.text = words[index];
+    span.text = word;
 
     currentGroup.append(span);
     currentGroup.append(new Element.br());
-
-
-    index += 1;
-  } while (index < words.length);
+  }
 }
