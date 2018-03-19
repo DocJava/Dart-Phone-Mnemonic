@@ -16,7 +16,7 @@ html, body {
     transform: translate(-50%, -30%);
 }
 
-#text-input{
+#text-input {
     border: 1px solid lightgray;
 }
 
@@ -36,6 +36,16 @@ html, body {
 
 .word-group {
     background-color: dimgray;
+}
+
+#geeksforgeeks_image {
+    float: left;
+
+}
+
+#geeksforgeeks {
+    border: 1px solid black;
+    float: right;
 }
 
 [unselectable] {
